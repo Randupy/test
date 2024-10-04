@@ -1,1 +1,1363 @@
-Some text
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Markup;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
+using static System.Runtime.CompilerServices.RuntimeHelpers;
+
+namespace pdd
+{
+    /// <summary>
+    /// Логика взаимодействия для Window2.xaml
+    /// </summary>
+    public partial class Window2 : Window
+    {
+        public Window2()
+        {
+            InitializeComponent();
+            NumberComboBox.SelectedIndex = 0;
+            NumberComboBox.ItemsSource = new Person[]
+            {
+                new Person { Name = "1" },
+                new Person { Name = "2" },
+                new Person { Name = "3" },
+                new Person { Name = "4" },
+                new Person { Name = "5" },
+                new Person { Name = "6" },
+                new Person { Name = "7" },
+                new Person { Name = "8" },
+                new Person { Name = "9" },
+                new Person { Name = "10" },
+                new Person { Name = "11" },
+                new Person { Name = "12" },
+                new Person { Name = "13" },
+                new Person { Name = "14" },
+                new Person { Name = "15" },
+                new Person { Name = "16" },
+                new Person { Name = "17" },
+                new Person { Name = "18" },
+                new Person { Name = "19" },
+                new Person { Name = "20" }
+            };
+
+            //var path = @"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\questions.txt"; // Путь к произвольному текстовому файлу
+            //var myList = File.ReadAllLines(path);
+
+            //var selectedQuestions = new List<string>();
+            //foreach (string ques in myList)
+            //{
+            //    // если строка начинается на определенную цифру, добавляем в список
+            //    if (ques.ToUpper().StartsWith("1"))
+            //    {
+                    
+                    
+            //    }
+            //    if (ques.ToUpper().StartsWith("2"))
+            //    { 
+            //        NumberComboBox.SelectedItem = ques; 
+                
+            //    }
+
+            //    if (ques.ToUpper().StartsWith("3"))
+            //    {
+            //        NumberComboBox.SelectedItem = ques;
+
+            //    }
+            //    if((Convert.ToString(NumberComboBox.SelectedValue) == "1"))
+            //    {
+                    
+            //        if (ques.ToUpper().StartsWith("1"))
+            //        {
+            //            Question.Content = ques;
+
+            //        }
+            //    }
+
+            //    if ((Convert.ToString(NumberComboBox.SelectedValue) == "2"))
+            //    {
+            //        Question.Content = ques[2];
+            //    }
+
+            //}
+            
+                
+
+
+            //using (StreamReader qst = new StreamReader(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\questions.txt"))
+            //{
+
+            //    string[] line = File.ReadAllLines(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\questions.txt", Encoding.Default);
+            //    if (Convert.ToString(NumberComboBox.SelectedValue) == "1")
+            //    {
+            //        Question.Content = line[0];
+
+            //    }
+
+
+            //}
+
+        }
+
+
+        private void Var_A_Click(object sender, RoutedEventArgs e)
+        {
+            
+            
+            if ((Convert.ToString(NumberComboBox.SelectedValue) == "1"))
+            {
+                string path = @"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\answers_user.txt";
+                using (StreamWriter writer = new StreamWriter(path, true))
+                {
+                    writer.WriteLine("A1");
+                    
+                }
+
+                Var_A.Background = Brushes.Red;
+                Var_B.Background = Brushes.Green;
+                Var_C.Background = Brushes.Red;
+            }
+            NumberComboBox.SelectedIndex += 1;
+
+            if ((Convert.ToString(NumberComboBox.SelectedValue) == "2"))
+            {
+                string path = @"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\answers_user.txt";
+                using (StreamWriter writer = new StreamWriter(path, true))
+                {
+                    writer.WriteLine("A2");
+                    
+                }
+                Var_A.Background = Brushes.Green;
+                Var_B.Background = Brushes.Red;
+                Var_C.Background = Brushes.Red;
+            }
+            if ((Convert.ToString(NumberComboBox.SelectedValue) == "3"))
+            {
+                string path = @"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\answers_user.txt";
+                using (StreamWriter writer = new StreamWriter(path, true))
+                {
+                    writer.WriteLine("A3");
+
+                }
+                Var_A.Background = Brushes.Green;
+                Var_B.Background = Brushes.Red;
+                Var_C.Background = Brushes.Red;
+            }
+            if ((Convert.ToString(NumberComboBox.SelectedValue) == "4"))
+            {
+                string path = @"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\answers_user.txt";
+                using (StreamWriter writer = new StreamWriter(path, true))
+                {
+                    writer.WriteLine("A4");
+
+                }
+                Var_A.Background = Brushes.Red;
+                Var_B.Background = Brushes.Red;
+                Var_C.Background = Brushes.Red;
+                Var_D.Background = Brushes.Green;
+            }
+        }
+
+        private void Var_B_Click(object sender, RoutedEventArgs e)
+        {
+            
+
+            if ((Convert.ToString(NumberComboBox.SelectedValue) == "1"))
+            {
+                string path = @"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\answers_user.txt";
+                using (StreamWriter writer = new StreamWriter(path, true))
+                {
+                    writer.WriteLine("B1");
+
+                }
+                Var_A.Background = Brushes.Red;
+                Var_B.Background = Brushes.Green;
+                Var_C.Background = Brushes.Red;
+            }
+
+            NumberComboBox.SelectedIndex += 1;
+
+            if ((Convert.ToString(NumberComboBox.SelectedValue) == "2"))
+            {
+                string path = @"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\answers_user.txt";
+                using (StreamWriter writer = new StreamWriter(path, true))
+                {
+                    writer.WriteLine("B2");
+
+                }
+                Var_A.Background = Brushes.Green;
+                Var_B.Background = Brushes.Red;
+                Var_C.Background = Brushes.Red;
+            }
+            if ((Convert.ToString(NumberComboBox.SelectedValue) == "3"))
+            {
+                string path = @"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\answers_user.txt";
+                using (StreamWriter writer = new StreamWriter(path, true))
+                {
+                    writer.WriteLine("B3");
+
+                }
+                Var_A.Background = Brushes.Green;
+                Var_B.Background = Brushes.Red;
+                Var_C.Background = Brushes.Red;
+            }
+            if ((Convert.ToString(NumberComboBox.SelectedValue) == "4"))
+            {
+                string path = @"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\answers_user.txt";
+                using (StreamWriter writer = new StreamWriter(path, true))
+                {
+                    writer.WriteLine("B4");
+                }
+                Var_A.Background = Brushes.Red;
+                Var_B.Background = Brushes.Red;
+                Var_C.Background = Brushes.Red;
+                Var_D.Background = Brushes.Green;
+            }
+        }
+
+        private void Var_C_Click(object sender, RoutedEventArgs e)
+        {
+            
+
+            if ((Convert.ToString(NumberComboBox.SelectedValue) == "1"))
+            {
+                string path = @"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\answers_user.txt";
+                using (StreamWriter writer = new StreamWriter(path, true))
+                {
+                    writer.WriteLine("C1");
+                }
+                Var_A.Background = Brushes.Red;
+                Var_B.Background = Brushes.Green;
+                Var_C.Background = Brushes.Red;
+            }
+
+            NumberComboBox.SelectedIndex += 1;
+
+            if ((Convert.ToString(NumberComboBox.SelectedValue) == "2"))
+            {
+                string path = @"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\answers_user.txt";
+                using (StreamWriter writer = new StreamWriter(path, true))
+                {
+                    writer.WriteLine("C2");
+                }
+                Var_A.Background = Brushes.Green;
+                Var_B.Background = Brushes.Red;
+                Var_C.Background = Brushes.Red;
+            }
+            if ((Convert.ToString(NumberComboBox.SelectedValue) == "3"))
+            {
+                string path = @"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\answers_user.txt";
+                using (StreamWriter writer = new StreamWriter(path, true))
+                {
+                    writer.WriteLine("C3");
+                }
+                Var_A.Background = Brushes.Green;
+                Var_B.Background = Brushes.Red;
+                Var_C.Background = Brushes.Red;
+            }
+            if ((Convert.ToString(NumberComboBox.SelectedValue) == "4"))
+            {
+                string path = @"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\answers_user.txt";
+                using (StreamWriter writer = new StreamWriter(path, true))
+                {
+                    writer.WriteLine("C4");
+                }
+                Var_A.Background = Brushes.Red;
+                Var_B.Background = Brushes.Red;
+                Var_C.Background = Brushes.Red;
+                Var_D.Background = Brushes.Green;
+            }
+        }
+
+        private async void Var_D_Click(object sender, RoutedEventArgs e)
+        {
+            
+            
+
+            if ((Convert.ToString(NumberComboBox.SelectedValue) == "1"))
+            {
+                string path = @"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\answers_user.txt";
+                using (StreamWriter writer = new StreamWriter(path, true))
+                {
+                    writer.WriteLine("D1");
+                }
+                Var_A.Background = Brushes.Red;
+                Var_B.Background = Brushes.Green;
+                Var_C.Background = Brushes.Red;
+            }
+
+            NumberComboBox.SelectedIndex += 1;
+
+            if ((Convert.ToString(NumberComboBox.SelectedValue) == "2"))
+            {
+                string path = @"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\answers_user.txt";
+                using (StreamWriter writer = new StreamWriter(path, true))
+                {
+                    writer.WriteLine("D2");
+                }
+                Var_A.Background = Brushes.Green;
+                Var_B.Background = Brushes.Red;
+                Var_C.Background = Brushes.Red;
+            }
+            if ((Convert.ToString(NumberComboBox.SelectedValue) == "3"))
+            {
+                string path = @"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\answers_user.txt";
+                using (StreamWriter writer = new StreamWriter(path, true))
+                {
+                    writer.WriteLine("D3");
+                }
+                Var_A.Background = Brushes.Green;
+                Var_B.Background = Brushes.Red;
+                Var_C.Background = Brushes.Red;
+            }
+            if ((Convert.ToString(NumberComboBox.SelectedValue) == "4"))
+            {
+                string path = @"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\answers_user.txt";
+                using (StreamWriter writer = new StreamWriter(path, true))
+                {
+                    writer.WriteLine("D4");
+                }
+                Var_A.Background = Brushes.Red;
+                Var_B.Background = Brushes.Red;
+                Var_C.Background = Brushes.Red;
+                Var_D.Background = Brushes.Green;
+            }
+        }
+
+        private void NumberComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            var path_questions = @"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\questions.txt"; 
+            var list_questions = File.ReadAllLines(path_questions);
+            var selectedQuestions = new List<string>();
+
+            var path_answers = @"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\answers_text.txt";
+            var list_answers = File.ReadAllLines(path_answers);
+            var selectedAnswers = new List<string>();
+            foreach (string answ in list_answers)
+            {
+                foreach (string ques in list_questions)
+                {
+
+
+                    if ((Convert.ToString(NumberComboBox.SelectedValue) == "1"))
+                    {
+                        Var_D.Visibility = Visibility.Hidden;
+                        if (ques.ToUpper().StartsWith("1."))
+                        {
+                            Question.Content = ques;
+
+                            if (answ.ToUpper().StartsWith("1.A"))
+                            {
+                                Var_A.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("1.B"))
+                            {
+                                Var_B.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("1.C"))
+                            {
+                                Var_C.Content = answ;
+                            }
+                            
+                        }
+                    }
+
+                    if ((Convert.ToString(NumberComboBox.SelectedValue) == "2"))
+                    {
+                        Imggg.Source = new BitmapImage(
+                new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question2.jpg"));
+                        Var_D.Visibility = Visibility.Hidden;
+                        if (ques.ToUpper().StartsWith("2."))
+                        {
+                            Question.Content = ques;
+
+                            if (answ.ToUpper().StartsWith("2.A"))
+                            {
+                                Var_A.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("2.B"))
+                            {
+                                Var_B.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("2.C"))
+                            {
+                                Var_C.Content = answ;
+                            }
+                        }
+                    }
+
+                    if ((Convert.ToString(NumberComboBox.SelectedValue) == "3"))
+                    {
+                        Imggg.Source = new BitmapImage(
+                new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question3.jpg"));
+                        Var_D.Visibility = Visibility.Hidden;
+                        if (ques.ToUpper().StartsWith("3."))
+                        {
+                            Question.Content = ques;
+
+                            if (answ.ToUpper().StartsWith("3.A"))
+                            {
+                                Var_A.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("3.B"))
+                            {
+                                Var_B.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("3.C"))
+                            {
+                                Var_C.Content = answ;
+                            }
+                        }
+                    }
+
+                    if ((Convert.ToString(NumberComboBox.SelectedValue) == "4"))
+                    {
+                        Imggg.Source = new BitmapImage(
+                new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question4.jpg"));
+                        Var_D.Visibility = Visibility.Visible;
+                        if (ques.ToUpper().StartsWith("4."))
+                        {
+                            Question.Content = ques;
+
+                            if (answ.ToUpper().StartsWith("4.A"))
+                            {
+                                Var_A.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.B"))
+                            {
+                                Var_B.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.C"))
+                            {
+                                Var_C.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.D"))
+                            {
+                                Var_D.Content = answ;
+                            }
+
+                        }
+                    }
+
+                    if ((Convert.ToString(NumberComboBox.SelectedValue) == "5"))
+                    {
+                        Imggg.Source = new BitmapImage(
+                new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question5.jpg"));
+                        Var_D.Visibility = Visibility.Visible;
+                        if (ques.ToUpper().StartsWith("5."))
+                        {
+                            Question.Content = ques;
+
+                            if (answ.ToUpper().StartsWith("4.A"))
+                            {
+                                Var_A.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.B"))
+                            {
+                                Var_B.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.C"))
+                            {
+                                Var_C.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.D"))
+                            {
+                                Var_D.Content = answ;
+                            }
+                        }
+                    }
+
+                    if ((Convert.ToString(NumberComboBox.SelectedValue) == "6"))
+                    {
+                        Var_D.Visibility = Visibility.Hidden;
+                        if (ques.ToUpper().StartsWith("6."))
+                        {
+                            Question.Content = ques;
+
+
+                            if (answ.ToUpper().StartsWith("4.A"))
+                            {
+                                Var_A.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.B"))
+                            {
+                                Var_B.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.C"))
+                            {
+                                Var_C.Content = answ;
+                            }
+                            
+                        }
+                    }
+
+                    if ((Convert.ToString(NumberComboBox.SelectedValue) == "7"))
+                    {
+                        Var_D.Visibility = Visibility.Visible;
+                        if (ques.ToUpper().StartsWith("7."))
+                        {
+                            Question.Content = ques;
+
+                            if (answ.ToUpper().StartsWith("4.A"))
+                            {
+                                Var_A.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.B"))
+                            {
+                                Var_B.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.C"))
+                            {
+                                Var_C.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.D"))
+                            {
+                                Var_D.Content = answ;
+                            }
+                        }
+                    }
+
+                    if ((Convert.ToString(NumberComboBox.SelectedValue) == "8"))
+                    {
+                        Imggg.Source = new BitmapImage(
+                new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question8.jpg"));
+                        Var_D.Visibility = Visibility.Hidden;
+                        if (ques.ToUpper().StartsWith("8."))
+                        {
+                            Question.Content = ques;
+
+                            if (answ.ToUpper().StartsWith("4.A"))
+                            {
+                                Var_A.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.B"))
+                            {
+                                Var_B.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.C"))
+                            {
+                                Var_C.Content = answ;
+                            }
+                            
+                        }
+                    }
+
+                    if ((Convert.ToString(NumberComboBox.SelectedValue) == "9"))
+                    {
+                        Imggg.Source = new BitmapImage(
+                new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question9.jpg"));
+                        Var_D.Visibility = Visibility.Hidden;
+                        if (ques.ToUpper().StartsWith("9."))
+                        {
+                            Question.Content = ques;
+
+                            if (answ.ToUpper().StartsWith("4.A"))
+                            {
+                                Var_A.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.B"))
+                            {
+                                Var_B.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.C"))
+                            {
+                                Var_C.Content = answ;
+                            }
+                            
+                        }
+                    }
+
+                    if ((Convert.ToString(NumberComboBox.SelectedValue) == "10"))
+                    {
+                        Imggg.Source = new BitmapImage(
+                new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question10.jpg"));
+                        Var_D.Visibility = Visibility.Hidden;
+                        if (ques.ToUpper().StartsWith("10."))
+                        {
+                            Question.Content = ques;
+
+                            if (answ.ToUpper().StartsWith("4.A"))
+                            {
+                                Var_A.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.B"))
+                            {
+                                Var_B.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.C"))
+                            {
+                                Var_C.Content = answ;
+                            }
+                            
+                        }
+                    }
+
+                    if ((Convert.ToString(NumberComboBox.SelectedValue) == "11"))
+                    {
+                        Imggg.Source = new BitmapImage(
+                new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question11.jpg"));
+                        Var_D.Visibility = Visibility.Hidden;
+                        if (ques.ToUpper().StartsWith("11."))
+                        {
+                            Question.Content = ques;
+
+                            if (answ.ToUpper().StartsWith("4.A"))
+                            {
+                                Var_A.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.B"))
+                            {
+                                Var_B.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.C"))
+                            {
+                                Var_C.Content = answ;
+                            }
+                            
+                        }
+                    }
+
+                    if ((Convert.ToString(NumberComboBox.SelectedValue) == "12"))
+                    {
+                        Imggg.Source = new BitmapImage(
+                new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question12.jpg"));
+                        Var_D.Visibility = Visibility.Hidden;
+                        if (ques.ToUpper().StartsWith("12."))
+                        {
+                            Question.Content = ques;
+
+                            if (answ.ToUpper().StartsWith("4.A"))
+                            {
+                                Var_A.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.B"))
+                            {
+                                Var_B.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.C"))
+                            {
+                                Var_C.Content = answ;
+                            }
+                           
+                        }
+                    }
+
+                    if ((Convert.ToString(NumberComboBox.SelectedValue) == "13"))
+                    {
+                        Imggg.Source = new BitmapImage(
+                new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question13.jpg"));
+                        Var_D.Visibility = Visibility.Visible;
+                        if (ques.ToUpper().StartsWith("13."))
+                        {
+                            Question.Content = ques;
+
+                            if (answ.ToUpper().StartsWith("4.A"))
+                            {
+                                Var_A.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.B"))
+                            {
+                                Var_B.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.C"))
+                            {
+                                Var_C.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.D"))
+                            {
+                                Var_D.Content = answ;
+                            }
+                        }
+                    }
+
+                    if ((Convert.ToString(NumberComboBox.SelectedValue) == "14"))
+                    {
+                        Imggg.Source = new BitmapImage(
+                new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question14.jpg"));
+                        Var_D.Visibility = Visibility.Visible;
+                        if (ques.ToUpper().StartsWith("14."))
+                        {
+                            Question.Content = ques;
+
+                            if (answ.ToUpper().StartsWith("4.A"))
+                            {
+                                Var_A.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.B"))
+                            {
+                                Var_B.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.C"))
+                            {
+                                Var_C.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.D"))
+                            {
+                                Var_D.Content = answ;
+                            }
+                        }
+                    }
+
+                    if ((Convert.ToString(NumberComboBox.SelectedValue) == "15"))
+                    {
+                        Imggg.Source = new BitmapImage(
+                new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question15.jpg"));
+                        Var_D.Visibility = Visibility.Hidden;
+                        if (ques.ToUpper().StartsWith("15."))
+                        {
+                            Question.Content = ques;
+
+                            if (answ.ToUpper().StartsWith("4.A"))
+                            {
+                                Var_A.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.B"))
+                            {
+                                Var_B.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.C"))
+                            {
+                                Var_C.Content = answ;
+                            }
+                            
+                        }
+                    }
+
+                    if ((Convert.ToString(NumberComboBox.SelectedValue) == "16"))
+                    {
+                        Imggg.Source = new BitmapImage(
+                new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question16.jpg"));
+                        Var_D.Visibility = Visibility.Visible;
+                        if (ques.ToUpper().StartsWith("16."))
+                        {
+                            Question.Content = ques;
+
+                            if (answ.ToUpper().StartsWith("4.A"))
+                            {
+                                Var_A.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.B"))
+                            {
+                                Var_B.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.C"))
+                            {
+                                Var_C.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.D"))
+                            {
+                                Var_D.Content = answ;
+                            }
+                        }
+                    }
+
+                    if ((Convert.ToString(NumberComboBox.SelectedValue) == "17"))
+                    {
+                        Var_D.Visibility = Visibility.Hidden;
+                        if (ques.ToUpper().StartsWith("17."))
+                        {
+                            Question.Content = ques;
+
+                            if (answ.ToUpper().StartsWith("4.A"))
+                            {
+                                Var_A.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.B"))
+                            {
+                                Var_B.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.C"))
+                            {
+                                Var_C.Content = answ;
+                            }
+                            
+                        }
+                    }
+
+                    if ((Convert.ToString(NumberComboBox.SelectedValue) == "18"))
+                    {
+                        Var_D.Visibility = Visibility.Visible;
+                        if (ques.ToUpper().StartsWith("18."))
+                        {
+                            Question.Content = ques;
+
+                            if (answ.ToUpper().StartsWith("4.A"))
+                            {
+                                Var_A.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.B"))
+                            {
+                                Var_B.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.C"))
+                            {
+                                Var_C.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.D"))
+                            {
+                                Var_D.Content = answ;
+                            }
+                        }
+                    }
+
+                    if ((Convert.ToString(NumberComboBox.SelectedValue) == "19"))
+                    {
+                        Var_D.Visibility = Visibility.Hidden;
+                        if (ques.ToUpper().StartsWith("19."))
+                        {
+                            Question.Content = ques;
+
+                            if (answ.ToUpper().StartsWith("4.A"))
+                            {
+                                Var_A.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.B"))
+                            {
+                                Var_B.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.C"))
+                            {
+                                Var_C.Content = answ;
+                            }
+                            
+                        }
+                    }
+
+                    if ((Convert.ToString(NumberComboBox.SelectedValue) == "20"))
+                    {
+                        Var_D.Visibility = Visibility.Hidden;
+                        if (ques.ToUpper().StartsWith("20."))
+                        {
+                            Question.Content = ques;
+
+                            if (answ.ToUpper().StartsWith("4.A"))
+                            {
+                                Var_A.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.B"))
+                            {
+                                Var_B.Content = answ;
+                            }
+                            if (answ.ToUpper().StartsWith("4.C"))
+                            {
+                                Var_C.Content = answ;
+                            }
+                            
+                        }
+                    }
+
+                }
+            }
+
+            //using (StreamReader qst = new StreamReader(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\questions.txt"))
+            //{
+
+            //    //string[] line = File.ReadAllLines(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\questions.txt", Encoding.Default);
+            //    //int i = NumberComboBox.SelectedIndex;
+            //    //foreach (string line2 in line)
+            //    //{
+
+
+            //    //    Question.Content = line[0];
+            //    //    line2.IndexOf[]
+
+
+
+            //    //}
+            //    //if(NumberComboBox.SelectedIndex == 1)
+            //    //{
+            //    //    Question.Content = line[0];
+
+            //    //}
+
+
+            //}
+
+            //StreamReader sr = new StreamReader(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\questions.txt");
+            //List<string> listqst = new List<string>();
+            //var selectedQst = listqst.Where(p => p.ToUpper().StartsWith("T")).OrderBy(p => p);
+            //string[] input = { "Brachiosaurus",
+            //               "Amargasaurus",
+            //               "Mamenchisaurus" };
+
+            //List<string> listqst= new List<string>(input);
+            //string[] output = listqst.GetRange(0, 1).ToArray();
+            //while (!sr.EndOfStream)
+            //{
+            //    listqst.Add(sr.ReadLine());
+            //    foreach (string qstns in output)
+            //    {
+            //        Question.Content = qstns;
+
+
+
+
+            //    }
+            //}
+
+
+            //if (Convert.ToString(NumberComboBox.SelectedValue) == "1")
+            //{
+            //    Question.Content = Questions.question1;
+            //    Imggg.Source = null;
+            //    Var_A.Content = Answers.answer1_A;
+            //    Var_B.Content = Answers.answer1_B;
+            //    Var_C.Content = Answers.answer1_C;
+            //    Var_D.Visibility = Visibility.Hidden;
+
+
+            //}
+
+
+            //if (Convert.ToString(NumberComboBox.SelectedValue) == "2")
+            //{
+            //    Imggg.Source = new BitmapImage(
+            //new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question2.jpg"));
+            //    Imggg.Height = 305;
+            //    Imggg.Width = 510;
+
+            //    Question.Content = Questions.question2;
+
+            //    Var_A.Content = Answers.answer2_A;
+            //    Var_B.Content = Answers.answer2_B;
+            //    Var_C.Content = Answers.answer2_C;
+            //    Var_D.Visibility = Visibility.Hidden;
+            //}
+
+
+            //if (Convert.ToString(NumberComboBox.SelectedValue) == "3")
+            //{
+            //    Imggg.Source = new BitmapImage(
+            //new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question3.jpg"));
+            //    Imggg.Height = 305;
+            //    Imggg.Width = 510;
+
+            //    Question.Content = Questions.question3;
+
+            //    Var_A.Content = Answers.answer3_A;
+            //    Var_B.Content = Answers.answer3_B;
+            //    Var_C.Content = Answers.answer3_C;
+            //    Var_D.Visibility = Visibility.Hidden;
+            //}
+
+            //if (Convert.ToString(NumberComboBox.SelectedValue) == "4")
+            //{
+            //    Imggg.Source = new BitmapImage(
+            //new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question4.jpg"));
+            //    Imggg.Height = 305;
+            //    Imggg.Width = 510;
+
+            //    Question.Content = Questions.question4;
+
+            //    Var_A.Content = Answers.answer4_A;
+            //    Var_B.Content = Answers.answer4_B;
+            //    Var_C.Content = Answers.answer4_C;
+            //    Var_D.Content = Answers.answer4_D;
+
+            //    Var_D.Visibility = Visibility.Visible;
+
+            //}
+
+            //if (Convert.ToString(NumberComboBox.SelectedValue) == "5")
+            //{
+            //    Imggg.Source = new BitmapImage(
+            //new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question5.jpg"));
+            //    Imggg.Height = 305;
+            //    Imggg.Width = 510;
+
+            //    Question.Content = Questions.question5;
+
+            //    Var_A.Content = Answers.answer5_A;
+            //    Var_B.Content = Answers.answer5_B;
+            //    Var_C.Content = Answers.answer5_C;
+            //    Var_D.Content = Answers.answer5_D;
+
+            //    Var_D.Visibility = Visibility.Visible;
+            //}
+
+            //if (Convert.ToString(NumberComboBox.SelectedValue) == "6")
+            //{
+            //    Question.Content = Questions.question6;
+            //    Imggg.Source = null;
+
+            //    Var_A.Content = Answers.answer6_A;
+            //    Var_B.Content = Answers.answer6_B;
+            //    Var_C.Content = Answers.answer6_C;
+            //    Var_D.Visibility = Visibility.Hidden;
+            //}
+
+            //if (Convert.ToString(NumberComboBox.SelectedValue) == "7")
+            //{
+            //    Question.Content = Questions.question7;
+            //    Imggg.Source = null;
+
+            //    Var_A.Content = Answers.answer7_A;
+            //    Var_B.Content = Answers.answer7_B;
+            //    Var_C.Content = Answers.answer7_C;
+            //    Var_D.Content = Answers.answer7_D;
+
+            //    Var_D.Visibility = Visibility.Visible;
+            //}
+
+            //if (Convert.ToString(NumberComboBox.SelectedValue) == "8")
+            //{
+            //    Imggg.Source = new BitmapImage(
+            //new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question8.jpg"));
+            //    Imggg.Height = 305;
+            //    Imggg.Width = 510;
+
+            //    Question.Content = Questions.question8;
+
+            //    Var_A.Content = Answers.answer8_A;
+            //    Var_B.Content = Answers.answer8_B;
+            //    Var_C.Content = Answers.answer8_C;
+            //    Var_D.Visibility = Visibility.Hidden;
+            //}
+
+            //if (Convert.ToString(NumberComboBox.SelectedValue) == "9")
+            //{
+            //    Imggg.Source = new BitmapImage(
+            //new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question9.jpg"));
+            //    Imggg.Height = 305;
+            //    Imggg.Width = 510;
+
+            //    Question.Content = Questions.question9;
+
+            //    Var_A.Content = Answers.answer9_A;
+            //    Var_B.Content = Answers.answer9_B;
+            //    Var_C.Content = Answers.answer9_C;
+            //    Var_D.Visibility = Visibility.Hidden;
+            //}
+
+            //if (Convert.ToString(NumberComboBox.SelectedValue) == "10")
+            //{
+            //    Imggg.Source = new BitmapImage(
+            //new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question10.jpg"));
+            //    Imggg.Height = 305;
+            //    Imggg.Width = 510;
+
+            //    Question.Content = Questions.question10;
+
+            //    Var_A.Content = Answers.answer10_A;
+            //    Var_B.Content = Answers.answer10_B;
+            //    Var_C.Content = Answers.answer10_C;
+            //    Var_D.Visibility = Visibility.Hidden;
+            //}
+
+            //if (Convert.ToString(NumberComboBox.SelectedValue) == "11")
+            //{
+            //    Imggg.Source = new BitmapImage(
+            //new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question11.jpg"));
+            //    Imggg.Height = 305;
+            //    Imggg.Width = 510;
+
+            //    Question.Content = Questions.question11;
+
+            //    Var_A.Content = Answers.answer11_A;
+            //    Var_B.Content = Answers.answer11_B;
+            //    Var_C.Content = Answers.answer11_C;
+            //    Var_D.Visibility = Visibility.Hidden;
+            //}
+
+            //if (Convert.ToString(NumberComboBox.SelectedValue) == "12")
+            //{
+            //    Imggg.Source = new BitmapImage(
+            //new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question12.jpg"));
+            //    Imggg.Height = 305;
+            //    Imggg.Width = 510;
+
+            //    Question.Content = Questions.question12;
+
+            //    Var_A.Content = Answers.answer12_A;
+            //    Var_B.Content = Answers.answer12_B;
+            //    Var_C.Content = Answers.answer12_C;
+            //    Var_D.Visibility = Visibility.Hidden;
+            //}
+
+            //if (Convert.ToString(NumberComboBox.SelectedValue) == "13")
+            //{
+            //    Imggg.Source = new BitmapImage(
+            //new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question13.jpg"));
+            //    Imggg.Height = 305;
+            //    Imggg.Width = 510;
+
+            //    Question.Content = Questions.question13;
+
+            //    Var_A.Content = Answers.answer13_A;
+            //    Var_B.Content = Answers.answer13_B;
+            //    Var_C.Content = Answers.answer13_C;
+            //    Var_D.Content = Answers.answer13_D;
+
+            //    Var_D.Visibility = Visibility.Visible;
+            //}
+
+            //if (Convert.ToString(NumberComboBox.SelectedValue) == "14")
+            //{
+            //    Imggg.Source = new BitmapImage(
+            //new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question14.jpg"));
+            //    Imggg.Height = 305;
+            //    Imggg.Width = 510;
+
+            //    Question.Content = Questions.question14;
+
+            //    Var_A.Content = Answers.answer14_A;
+            //    Var_B.Content = Answers.answer14_B;
+            //    Var_C.Content = Answers.answer14_C;
+            //    Var_D.Content = Answers.answer14_D;
+
+            //    Var_D.Visibility = Visibility.Visible;
+            //}
+
+            //if (Convert.ToString(NumberComboBox.SelectedValue) == "15")
+            //{
+            //    Imggg.Source = new BitmapImage(
+            //new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question15.jpg"));
+            //    Imggg.Height = 305;
+            //    Imggg.Width = 510;
+
+            //    Question.Content = Questions.question15;
+
+            //    Var_A.Content = Answers.answer15_A;
+            //    Var_B.Content = Answers.answer15_B;
+            //    Var_C.Content = Answers.answer15_C;
+            //    Var_D.Visibility = Visibility.Hidden;
+            //}
+
+            //if (Convert.ToString(NumberComboBox.SelectedValue) == "16")
+            //{
+            //    Imggg.Source = new BitmapImage(
+            //new Uri(@"C:\Users\khusa\source\repos\pdd\pdd\bin\Debug\images_for_questions\question16.jpg"));
+            //    Imggg.Height = 305;
+            //    Imggg.Width = 510;
+
+            //    Question.Content = Questions.question16;
+
+            //    Var_A.Content = Answers.answer16_A;
+            //    Var_B.Content = Answers.answer16_B;
+            //    Var_C.Content = Answers.answer16_C;
+            //    Var_D.Content = Answers.answer16_D;
+
+            //    Var_D.Visibility = Visibility.Visible;
+            //}
+
+            //if (Convert.ToString(NumberComboBox.SelectedValue) == "17")
+            //{
+            //    Question.Content = Questions.question17;
+            //    Imggg.Source = null;
+
+            //    Var_A.Content = Answers.answer17_A;
+            //    Var_B.Content = Answers.answer17_B;
+            //    Var_C.Content = Answers.answer17_C;
+            //    Var_D.Visibility = Visibility.Hidden;
+            //}
+
+            //if (Convert.ToString(NumberComboBox.SelectedValue) == "18")
+            //{
+            //    Question.Content = Questions.question18;
+            //    Imggg.Source = null;
+
+            //    Var_A.Content = Answers.answer18_A;
+            //    Var_B.Content = Answers.answer18_B;
+            //    Var_C.Content = Answers.answer18_C;
+            //    Var_D.Content = Answers.answer18_D;
+
+            //    Var_D.Visibility = Visibility.Visible;
+            //}
+
+            //if (Convert.ToString(NumberComboBox.SelectedValue) == "19")
+            //{
+            //    Question.Content = Questions.question19;
+            //    Imggg.Source = null;
+
+            //    Var_A.Content = Answers.answer19_A;
+            //    Var_B.Content = Answers.answer19_B;
+            //    Var_C.Content = Answers.answer19_C;
+            //    Var_D.Visibility = Visibility.Hidden;
+            //}
+
+            //if (Convert.ToString(NumberComboBox.SelectedValue) == "20")
+            //{
+            //    Question.Content = Questions.question20;
+            //    Imggg.Source = null;
+
+            //    Var_A.Content = Answers.answer20_A;
+            //    Var_B.Content = Answers.answer20_B;
+            //    Var_C.Content = Answers.answer20_C;
+            //    Var_D.Visibility = Visibility.Hidden;
+            //}
+
+
+
+        }
+
+        private void NumberComboBox_SelectionChanged1(object sender, SelectionChangedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    class Questions : Window2
+    {
+        //public static string question1 = "В каком случае водитель совершит вынужденную остановку?";
+        //public static string question2 = "Разрешен ли Вам поворот на дорогу с грунтовым покрытием?";
+        //public static string question3 = "Можно ли Вам остановиться в указанном месте для посадки пассажира?";
+        //public static string question4 = "Какие из указанных знаков запрещают движение водителям мопедов?";
+        //public static string question5 = "Вы намерены повернуть налево. Где следует остановиться, чтобы уступить дорогу легковому автомобилю?";
+        //public static string question6 = "Что означает мигание зелёного сигнала светофора?";
+        //public static string question7 = "Водитель обязан подавать сигналы световыми указателями поворота (рукой):";
+        //public static string question8 = "Как Вам следует поступить при повороте направо?";
+        //public static string question9 = "По какой траектории Вам разрешено выполнить разворот?";
+        //public static string question10 = "С какой скоростью Вы можете продолжить движение вне населённого пункта по левой полосе на легковом автомобиле?";
+        //public static string question11 = "Можно ли водителю легкового автомобиля выполнить опережение грузовых автомобилей вне населенного пункта по такой траектории?";
+        //public static string question12 = "В каком случае водителю разрешается поставить автомобиль на стоянку в указанном месте?";
+        //public static string question13 = "При повороте направо Вы должны уступить дорогу:";
+        //public static string question14 = "Вы намерены проехать перекресток в прямом направлении. Кому Вы должны уступить дорогу?";
+        //public static string question15 = "Кому Вы обязаны уступить дорогу при повороте налево?";
+        //public static string question16 = "С какой максимальной скоростью можно продолжить движение за знаком?";
+        //public static string question17 = "Для перевозки людей на мотоцикле водитель должен иметь водительское удостоверение на право управления транспортными средствами:";
+        //public static string question18 = "При какой неисправности разрешается эксплуатация транспортного средства?";
+        //public static string question19 = "В случае, когда правые колёса автомобиля наезжают на неукреплённую влажную обочину, рекомендуется:";
+        //public static string question20 = "Что понимается под временем реакции водителя?";
+
+
+
+        
+
+    }
+
+    class Answers : Window2
+    {
+        //public static string answer1_A = "Остановившись непосредственно перед пешеходным переходом, чтобы уступить дорогу пешеходу";
+        //public static string answer1_B = "Остановившись на проезжей части из-за технической неисправности транспортного средства";
+        //public static string answer1_C = "В обоих перечисленных случаях";
+
+        //public static string answer2_A = "Разрешен";
+        //public static string answer2_B = "Разрешен только при технической неисправности транспортного средства";
+        //public static string answer2_C = "Запрещен";
+
+        //public static string answer3_A = "Можно";
+        //public static string answer3_B = "Можно, если Вы управляете такси";
+        //public static string answer3_C = "Нельзя";
+
+        //public static string answer4_A = "Только А";
+        //public static string answer4_B = "Только Б";
+        //public static string answer4_C = "В и Г";
+        //public static string answer4_D = "Все";
+
+
+        //public static string answer5_A = "Перед знаком";
+        //public static string answer5_B = "Перед перекрестком у линии разметки";
+        //public static string answer5_C = "На перекрестке перед прерывистой линией разметки";
+        //public static string answer5_D = "В любом месте по усмотрению водителя";
+
+        //public static string answer6_A = "Предупреждает о неисправности светофора";
+        //public static string answer6_B = "Разрешает движение и информирует о том, что вскоре будет включен запрещающий сигнал";
+        //public static string answer6_C = "Запрещает дальнейшее движение";
+
+        //public static string answer7_A = "Перед началом движения или перестроением";
+        //public static string answer7_B = "Перед поворотом или разворотом";
+        //public static string answer7_C = "Перед остановкой";
+        //public static string answer7_D = "Во всех перечисленных случаях";
+
+        //public static string answer8_A = "Перестроиться на правую полосу, затем осуществить поворот";
+        //public static string answer8_B = "Продолжить движение по второй полосе до перекрёстка, затем повернуть";
+        //public static string answer8_C = "Возможны оба варианта действий";
+
+        //public static string answer9_A = "Только по А";
+        //public static string answer9_B = "Только по Б";
+        //public static string answer9_C = "По любой из указанных";
+
+        //public static string answer10_A = "Не более 50 км/ч";
+        //public static string answer10_B = "Не менее 50 км/ч и не более 70 км/ч";
+        //public static string answer10_C = "Не менее 50 км/ч и не более 90 км/ч";
+
+        //public static string answer11_A = "Можно";
+        //public static string answer11_B = "Можно, если скорость грузовых автомобилей менее 30 км/ч";
+        //public static string answer11_C = "Нельзя";
+
+        //public static string answer12_A = "Только если расстояние до сплошной линии разметки не менее 3 м";
+        //public static string answer12_B = "Только если расстояние до края пересекаемой проезжей части не менее 5 м";
+        //public static string answer12_C = "При соблюдении обоих перечисленных условий";
+
+        //public static string answer13_A = "Только велосипедисту";
+        //public static string answer13_B = "Только пешеходам";
+        //public static string answer13_C = "Пешеходам и велосипедисту";
+        //public static string answer13_D = "Никому";
+
+        //public static string answer14_A = "Обоим трамваям";
+        //public static string answer14_B = "Только трамваю А";
+        //public static string answer14_C = "Только трамваю Б";
+        //public static string answer14_D = "Никому";
+
+        //public static string answer15_A = "Только автобусу";
+        //public static string answer15_B = "Только легковому автомобилю";
+        //public static string answer15_C = "Никому";
+
+        //public static string answer16_A = "60 км/ч";
+        //public static string answer16_B = "50 км/ч";
+        //public static string answer16_C = "30 км/ч";
+        //public static string answer16_D = "20 км/ч";
+
+        //public static string answer17_A = "Категории «A» или подкатегории «A1»";
+        //public static string answer17_B = "Любой категории или подкатегории в течение 2 и более лет";
+        //public static string answer17_C = "Только категории «A» или подкатегории «A1» в течение 2 и более лет";
+
+        //public static string answer18_A = "Не работают пробки топливных баков";
+        //public static string answer18_B = "Не работает механизм регулировки положения сиденья водителя";
+        //public static string answer18_C = "Не работают устройства обогрева и обдува стекол";
+        //public static string answer18_D = "Не работает стеклоподъемник";
+
+        //public static string answer19_A = "Затормозить и полностью остановиться";
+        //public static string answer19_B = "Затормозить и плавно направить автомобиль на проезжую часть";
+        //public static string answer19_C = "Не прибегая к торможению, плавно направить автомобиль на проезжую часть";
+
+        //public static string answer20_A = "Время с момента обнаружения водителем опасности до полной остановки транспортного средства";
+        //public static string answer20_B = "Время с момента обнаружения водителем опасности до начала принятия мер по её избежанию";
+        //public static string answer20_C = "Время, необходимое для переноса ноги с педали управления подачи топлива на педаль тормоза";
+
+        
+
+
+    }
+
+    public class TrueAnswers : Window2
+    {
+        public static string trueansw1 = "b";
+        public static string trueansw2 = "a";
+        public static string trueansw3 = "a";
+        public static string trueansw4 = "d";
+        public static string trueansw5 = "b";
+        public static string trueansw6 = "b";
+        public static string trueansw7 = "d";
+        public static string trueansw8 = "c";
+        public static string trueansw9 = "a";
+        public static string trueansw10 = "c";
+        public static string trueansw11 = "a";
+        public static string trueansw12 = "c";
+        public static string trueansw13 = "c";
+        public static string trueansw14 = "a";
+        public static string trueansw15 = "c";
+        public static string trueansw16 = "d";
+        public static string trueansw17 = "c";
+        public static string trueansw18 = "d";
+        public static string trueansw19 = "c";
+        public static string trueansw20 = "b";
+    }
+
+    
+
+
+
+
+}
